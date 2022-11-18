@@ -19,7 +19,19 @@ xui.Class('App', 'xui.Module',{
         iniComponents : function(){
             // [[Code created by CrossUI RAD Studio
             var host=this, children=[], append=function(child){children.push(child.get(0));};
-
+            
+            append(
+                xui.create("xui.UI.Label")
+                .setHost(host,"xui_ui_label7")
+                .setDock("center")
+                .setLeft("28.19047619047619em")
+                .setTop("18.285714285714285em")
+                .setWidth("5.0285714285714285em")
+                .setHeight("4.266666666666667em")
+                .setCaption("Hello World")
+                .onClick("_xui_ui_label7_onclick")
+            );
+            
             return children;
             // ]]Code created by CrossUI RAD Studio
         },
@@ -28,6 +40,16 @@ xui.Class('App', 'xui.Module',{
         customAppend : function(parent, subId, left, top){
             // "return false" will cause all the internal UI controls will be added to the parent panel
             return false;
+        },
+        /**
+         * Fired when user click it
+         * @method onClick [xui.UI.Label event]
+         * @param {xui.UIProfile.} profile  The current control's profile object
+         * @param {Event} e , Dom event object
+         * @param {String} src , Element.xui id or Dom Element
+        */
+        _xui_ui_label7_onclick:function(profile, e, src){
+            var ns = this, uictrl = profile.boxing();
         }
         /*,
         // To determine how properties affects this module
